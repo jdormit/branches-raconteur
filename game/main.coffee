@@ -23,7 +23,7 @@ img = elements.img
 # ----------------------------------------------------------------------------
 # IFID and game version - Edit this
 
-undum.game.id = "my.game.id"
+undum.game.id = "659fb84c-62ed-4d1c-ba01-89c9316e3270" #UUID
 undum.game.version = "0.1"
 
 # ----------------------------------------------------------------------------
@@ -48,21 +48,6 @@ situation 'start',
 # Qualities
 
 qualities
-  stats:
-    name: 'Statistics',
-    strength: qualities.integer('Strength', {priority: '001'}),
-    dexterity: qualities.integer('Dexterity', {priority: '002'}),
-    constitution: qualities.integer('Constitution', {priority: '003'}),
-    intelligence: qualities.integer('Intelligence', {priority: '004'}),
-    perception: qualities.integer('Perception', {priority: '005'}),
-    charisma: qualities.integer('Charisma', {priority: '006'})
-  possessions:
-    name: 'Possessions',
-    gold: qualities.integer('Gold'),
-    sword: qualities.wordScale('Sword', ['dull', 'sharp']),
-    shield: qualities.yesNo('Shield')
-    options:
-      extraClasses: ["possessions"]
 
 
 #-----------------------------------------------------------------------------
@@ -70,15 +55,6 @@ qualities
 
 undum.game.init = (character, system) ->
   # Add initialisation code here
-  character.qualities.strength = 10
-  character.qualities.dexterity = 12
-  character.qualities.constitution = 10
-  character.qualities.perception = 14
-  character.qualities.intelligence = 16
-  character.qualities.charisma = 8
-  character.qualities.gold = 100
-  character.qualities.sword = 1
-  character.qualities.shield = 1
 
 # Get the party started when the DOM is ready.
 
