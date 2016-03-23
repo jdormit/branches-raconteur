@@ -87,6 +87,15 @@ gulp.task('build', ['html', 'img', 'less', 'coffee'], function () {
 
 });
 
+/* Watch for changes in development build */
+
+gulp.task('watch', function () {
+	gulp.watch('game/*', ['build']);
+	gulp.watch('html/*', ['build']);
+	gulp.watch('img/*', ['build']);
+	gulp.watch('less/*', ['build']);
+});
+
 /* Start a development server */
 
 gulp.task('serve', ['build'], function () {

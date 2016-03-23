@@ -31,17 +31,11 @@ undum.game.version = "0.1"
 
 situation 'start',
   content: """
-  ![a storyteller](img/storyteller.jpg)
-
-  # Welcome to Raconteur
-
-  If you're seeing this, you've successfully installed the Raconteur game
-  scaffold. Get writing! 
-
-  Raconteur lives at a [Github Repository], where you can report issues or
-  send feedback.
-
-  [Github Repository]: https://github.com/sequitur/raconteur
+  \"Cities, like dreams, are made of desires and fears,
+  even if the thread of their discourse is secret, 
+  their rules are absurd, their perspectives deceitful,
+  and everything conceals something else.\"\n
+  -- Italo Calvino, Invisible Cities
   """
 
 # ----------------------------------------------------------------------------
