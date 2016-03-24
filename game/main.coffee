@@ -30,7 +30,7 @@ undum.game.version = "0.1"
 
 # Function that makes content appear after a number of seconds have passed
 # The `action` parameter should be the id of an action in the actions object of the parent situation
-appearAfter = (system, seconds, action) ->
+timedWriter = (system, seconds, action) ->
 	seconds *= 1000
 	action = "./_writer_" + action
 	setTimeout(
@@ -52,16 +52,14 @@ situation 'start',
 		and everything conceals something else.\"*
 
 		-- Italo Calvino, Invisible Cities
-		<br>
-		<br>
+		<br><br>
 		"""
 situation 'intro',
 	content: (character, system) ->
 		"""
 		A fire crackles and pops in the hearth.
-		<br>
-		<br>
-		#{ appearAfter(system, 2, 'old-man') }
+		<br><br>
+		#{ timedWriter(system, 2, 'old-man') }
 
 		"""
 	writers:
@@ -71,7 +69,7 @@ situation 'intro',
 			the color of dirty snow, frames his lined face. His suit, though worn, is impeccable. 
 			White smoke from his wooden pipe mingles with sooty fumes from the fire.
 			
-			#{ appearAfter(system, 5, 'he-speaks') }
+			#{ timedWriter(system, 5, 'he-speaks') }
 
 			"""
 		"he-speaks": (character, system) ->
@@ -94,24 +92,46 @@ situation 'opening_monologue',
 			millennia. Sometimes, when the passing footstep of an errant child disturbs earth long undisturbed or the song of a 
 			love-struck youth finds its way into rooms that have not known song for a century, something shifts in the delicate 
 			architecture of Adriata's jumbled past. Cracks begin to form - and if you are very watchful, and very patient, you might 
-			find a way to slip into these cracks and explore her secrets long forgotten.    
+			find a way to slip into these cracks and explore her secrets long forgotten.&rdquo;
 
-			\"My story [begins](at_the_beginning) in Adriata, and it [ends](at_the_end) in Adriata, just as all stories ultimately begin and end in Adriata. Listen 
+			The old man pauses. His pipe has run low. He stands and walks to side table where he keeps a little wooden box of the finest
+			Virginia tobacco. He refills his pipe and stands by the window, contemplating the jumbled stones of [the city](city) outside.  
+
+			\"My story begins in Adriata, and it ends in Adriata, just as all stories ultimately begin and end in Adriata. Listen 
 			carefully, for like the city itself this story conceals its roots with its substance, and somewhere beneath its intricate 
-			surface lies the ghost of truth...\"
-
+			surface lies the ghost of truth...\"  
+			
 		"""
 
-situation 'at_the_beginning',
+situation 'city',
 	content:
 		"""
-			A party in the streets.
+
+		The sun has just crested the inland hills, bathing the sky in orange and yellow. The old man does not squint against the glare.
+		He looks instead at the achingly familiar skyline. To the south, towards the ocean, the tall crooked tenements of [The Narrows](narrows)
+		give way to the cranes and masts of the harbor. Steeples and clocktowers punctuate the low roofs of the Flower District, where bakers 
+		sweeten the air with the scent of fresh bread and artisans tighten springs in clever clockwork toys. The streets rise to the north, 
+		where the pocked walls of the Inner City look inward at mansions almost as old as the families of those who live in them. Behind those 
+		ancient walls, crowning the hill around which Adriata grew, the burnt-out ruin of the [Royal Palace](palace) crumbles into obscurity.
+
 		"""
 
-situation 'at_the_end',
+situation 'narrows',
 	content:
 		"""
-			A party at court.
+
+		<br><br>
+		&ldquo;I lived here with Elia.
+
+		"""
+
+situation 'palace',
+	content:
+		"""
+
+		<br><br>
+		&ldquo;My first visit to the palace felt like a dream.
+
 		"""
 
 #-----------------------------------------------------------------------------
